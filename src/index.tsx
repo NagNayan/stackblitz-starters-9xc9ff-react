@@ -12,6 +12,11 @@ const root = createRoot(rootElement);
 
 root.render(
   <StrictMode>
-    <Table />
+    <BrowserRouter>
+      <Routes>
+        <Route exact path="/" element={<Table />} />
+        <Route exact path="/add" element={<Child />} />
+      </Routes>
+    </BrowserRouter>
   </StrictMode>
 );

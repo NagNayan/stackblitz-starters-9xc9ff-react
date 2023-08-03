@@ -5,6 +5,7 @@ import Parent from './Parent';
 //import axios from 'axios';
 export default function Table() {
   const [state, updateState] = useState({ data: [] });
+  const navigate = useNavigate();
 
   useEffect(() => {
     fetchProductDetails();
@@ -36,8 +37,7 @@ export default function Table() {
   }
 
   const navigateToChild = () => {
-    console.log('child ');
-    useNavigate('/add');
+    navigate('/add');
   };
 
   return (

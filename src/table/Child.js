@@ -92,7 +92,7 @@ export default function Child(props) {
           type="textarea"
           id="desc"
           value={formState.desc}
-          onChnage={(ev) =>
+          onChange={(ev) =>
             updateFormState((e) => {
               return { ...e, desc: ev.target.value };
             })

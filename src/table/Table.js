@@ -5,6 +5,7 @@ import Parent from './Parent';
 //import axios from 'axios';
 export default function Table() {
   const [state, updateState] = useState({ data: [] });
+  const [filtetText, updateFilterText] = useState('');
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -43,6 +44,8 @@ export default function Table() {
     navigateToChild();
   }
 
+  function functionToCallApi(ev) {}
+
   return (
     <div>
       <div
@@ -53,6 +56,13 @@ export default function Table() {
         onClick={navigateToChild}
       >
         <span className="col-sm-6">Add to My Collection</span>
+        <input
+          className="form-control m-2"
+          type="text"
+          placeholder="filter my collection"
+          valur={filtetText}
+          onChange={functionToCallApi}
+        />
       </div>
       {state.data.map((res) => {
         return (

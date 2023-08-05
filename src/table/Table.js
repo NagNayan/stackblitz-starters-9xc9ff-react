@@ -39,6 +39,9 @@ export default function Table() {
   const navigateToChild = () => {
     navigate('/add');
   };
+  function onUpdateTrigger() {
+    navigateToChild();
+  }
 
   return (
     <div>
@@ -52,7 +55,14 @@ export default function Table() {
         <span className="col-sm-6">Add to My Collection</span>
       </div>
       {state.data.map((res) => {
-        return <Parent key={res.id} data={res} onDelete={onDeleteTrigger} />;
+        return (
+          <Parent
+            key={res.id}
+            data={res}
+            onUpdate={onUpdateTrigger}
+            onDelete={onDeleteTrigger}
+          />
+        );
       })}
     </div>
   );

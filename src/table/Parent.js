@@ -19,7 +19,7 @@ const Parent = (props) => {
         <div className="col-sm-2">{props.data.category}</div>
         <div className="col-sm-4">{props.data.description}</div>
         <div className="col-sm-2">
-          <button type="submit" className="btn btn-primary">
+          <button type="submit" className="btn btn-primary" onClick={props.onUpdate}>
             Update ?
           </button>
           <button
